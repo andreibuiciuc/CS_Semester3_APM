@@ -1,6 +1,7 @@
 package Repository;
 
 import Exceptions.FullRepoException;
+import Exceptions.InvalidIDException;
 import Model.InterfaceVehicle;
 
 public class MemoryRepository implements InterfaceRepository {
@@ -15,7 +16,8 @@ public class MemoryRepository implements InterfaceRepository {
         this.data = new InterfaceVehicle[this.capacity];
     }
 
-    private int getIndexInRepo(String vehicleId){
+    @Override
+    public int getIndexInRepo(String vehicleId){
         int index = -1;
         for (int i = 0; i < length; i ++) {
             if (vehicleId.equals(data[i].getID())) {
@@ -48,8 +50,12 @@ public class MemoryRepository implements InterfaceRepository {
     }
 
     @Override
-    public void remove(String vehicleId) {
+    public void remove(String vehicleId) throws InvalidIDException {
         int index = this.getIndexInRepo(vehicleId);
+        if(index == -1) {
+            throw new InvalidIDException("Vehicle not in the repo.");
+        }
+
         data[index] = data[length-1];
         data[length-1] = null;
         length = length - 1;

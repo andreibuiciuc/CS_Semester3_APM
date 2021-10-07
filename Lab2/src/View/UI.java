@@ -5,6 +5,7 @@ import Controller.Controller;
 import Exceptions.FullRepoException;
 import Exceptions.InvalidIDException;
 import Exceptions.InvalidTypeException;
+import Model.InterfaceVehicle;
 
 public class UI implements InterfaceUI{
 
@@ -60,11 +61,12 @@ public class UI implements InterfaceUI{
         }
     }
 
-    private void getExpensiveRepairs() {
-        for(int i = 0; i < this.controller.getRepository().getLength(); i ++) {
-            if(this.controller.getRepository().getData()[i].getRepairCost() > 1000) {
-                System.out.println(this.controller.getRepository().getData()[i]);
-            }
+    private void getExpensiveRepairsUI() {
+        InterfaceVehicle[] expensiveRepairs = controller.getExpensiveRepairs();
+        int index = 0;
+        while (expensiveRepairs[index] != null) {
+            System.out.println(expensiveRepairs[index]);
+            index += 1;
         }
     }
 
@@ -84,7 +86,7 @@ public class UI implements InterfaceUI{
                 case "1" -> this.showRepo();
                 case "2" -> this.addUI();
                 case "3" -> this.deleteUI();
-                case "4" -> this.getExpensiveRepairs();
+                case "4" -> this.getExpensiveRepairsUI();
                 case "0" -> done = true;
                 default -> System.out.println("Invalid command.");
             }
