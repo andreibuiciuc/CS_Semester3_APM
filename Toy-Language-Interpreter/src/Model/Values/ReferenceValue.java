@@ -19,7 +19,7 @@ public class ReferenceValue implements Value {
         this.locationType = locationType;
     }
 
-    int getHeapAddress() {
+    public int getHeapAddress() {
         return heapAddress;
     }
 
@@ -33,11 +33,8 @@ public class ReferenceValue implements Value {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ReferenceValue that = (ReferenceValue) o;
-        return heapAddress == that.heapAddress && Objects.equals(locationType, that.locationType);
+    public boolean equals(Object another) {
+        return another instanceof ReferenceValue && ((ReferenceValue) another).getHeapAddress() == heapAddress;
     }
 
     @Override
