@@ -199,7 +199,32 @@ public class Interpreter {
 
         menu.addCommand(new RunExampleCommand("8", ex8.toString(), controller8));
 
+        // Example 10
+        MyIStack<IStatement> exeStack10 = new MyStack<>();
+        MyIDictionary<String, Value> symTable10 = new MyDictionary<>();
+        MyIList<Value> out10 = new MyList<>();
+        MyIDictionary<StringValue, BufferedReader> fileTable10 = new MyDictionary<>();
+        MyIDictionary<Integer, Value> heap10 = new MyHeap<>();
+
+        IStatement ex10 =
+        new CompoundStatement(new VariableDeclarationStatement("v", new IntType()),
+        new CompoundStatement(new AssignmentStatement("v", new ValueExpression(new IntValue(4))),
+        new CompoundStatement(new WhileStatement(new RelationalExpression(new VariableExpression("v"),
+        new ValueExpression(new IntValue()), ">"), new CompoundStatement(
+        new PrintStatement(new VariableExpression("v")), new AssignmentStatement("v",
+        new ArithmeticExpression('-', new VariableExpression("v"), new ValueExpression(new IntValue(1)))))),
+        new PrintStatement(new VariableExpression("v")))));
+
+
+        ProgramState programState10 = new ProgramState(exeStack10, symTable10, out10, ex10, fileTable10, heap10);
+        IRepository repository10 = new Repository("log10.txt");
+        Controller controller10 = new Controller(repository10);
+        controller10.addProgramState(programState10);
+
+        menu.addCommand(new RunExampleCommand("10", ex10.toString(), controller10));
+
         // Show menu
         menu.show();
+
     }
 }
