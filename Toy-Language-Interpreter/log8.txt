@@ -1,0 +1,110 @@
+
+Execution stack:
+{ (Ref int v ; (new(v,20) ; (print(rH(v)) ; (wH(v, 30) ; print(rH(v) + 5))))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Execution stack:
+{ Ref int v | (new(v,20) ; (print(rH(v)) ; (wH(v, 30) ; print(rH(v) + 5)))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Execution stack:
+{ (new(v,20) ; (print(rH(v)) ; (wH(v, 30) ; print(rH(v) + 5)))) }
+Symbols table:
+{ v -> (0, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Execution stack:
+{ new(v,20) | (print(rH(v)) ; (wH(v, 30) ; print(rH(v) + 5))) }
+Symbols table:
+{ v -> (0, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Execution stack:
+{ (print(rH(v)) ; (wH(v, 30) ; print(rH(v) + 5))) }
+Symbols table:
+{ v -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Execution stack:
+{ print(rH(v)) | (wH(v, 30) ; print(rH(v) + 5)) }
+Symbols table:
+{ v -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Execution stack:
+{ (wH(v, 30) ; print(rH(v) + 5)) }
+Symbols table:
+{ v -> (1, int) }
+Out list:
+[ 20 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Execution stack:
+{ wH(v, 30) | print(rH(v) + 5) }
+Symbols table:
+{ v -> (1, int) }
+Out list:
+[ 20 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Execution stack:
+{ print(rH(v) + 5) }
+Symbols table:
+{ v -> (1, int) }
+Out list:
+[ 20 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 30 }
+
+Execution stack:
+{}
+Symbols table:
+{ v -> (1, int) }
+Out list:
+[ 20, 35 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 30 }
