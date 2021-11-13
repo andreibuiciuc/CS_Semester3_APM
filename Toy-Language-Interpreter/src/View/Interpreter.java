@@ -199,6 +199,30 @@ public class Interpreter {
 
         menu.addCommand(new RunExampleCommand("8", ex8.toString(), controller8));
 
+        // Example 9
+        // Ref int v;new(v,20);Ref Ref int a; new(a,v); new(v,30);print(rH(rH(a)))
+        MyIStack<IStatement> exeStack9 = new MyStack<>();
+        MyIDictionary<String, Value> symTable9 = new MyDictionary<>();
+        MyIList<Value> out9 = new MyList<>();
+        MyIDictionary<StringValue, BufferedReader> fileTable9 = new MyDictionary<>();
+        MyIDictionary<Integer, Value> heap9 = new MyHeap<>();
+
+        IStatement ex9 =
+        new CompoundStatement(new VariableDeclarationStatement("v", new ReferenceType(new IntType())),
+        new CompoundStatement(new HeapAllocationStatement("v", new ValueExpression(new IntValue(20))),
+        new CompoundStatement(new VariableDeclarationStatement("a", new ReferenceType(new ReferenceType(new IntType()))),
+        new CompoundStatement(new HeapAllocationStatement("a", new VariableExpression("v")),
+        new CompoundStatement(new HeapAllocationStatement("v", new ValueExpression(new IntValue(30))),
+        new PrintStatement(new HeapReadingExpression(new HeapReadingExpression(new VariableExpression("a")))))))));
+
+        ProgramState programState9 = new ProgramState(exeStack9, symTable9, out9, ex9, fileTable9, heap9);
+        IRepository repository9 = new Repository("log9.txt");
+        Controller controller9 = new Controller(repository9);
+        controller9.addProgramState(programState9);
+
+        menu.addCommand(new RunExampleCommand("9", ex9.toString(), controller9));
+
+
         // Example 10
         MyIStack<IStatement> exeStack10 = new MyStack<>();
         MyIDictionary<String, Value> symTable10 = new MyDictionary<>();

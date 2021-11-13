@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MyDictionary<TKey, TElem> implements MyIDictionary<TKey, TElem>{
-    private final Map<TKey, TElem> dictionary;
+    private HashMap<TKey, TElem> dictionary;
 
     public MyDictionary() { this.dictionary = new HashMap<>(); }
 
@@ -32,8 +32,8 @@ public class MyDictionary<TKey, TElem> implements MyIDictionary<TKey, TElem>{
     }
 
     @Override
-    public TElem remove(TKey key) {
-        return dictionary.remove(key);
+    public void remove(TKey key) {
+        dictionary.remove(key);
     }
 
     @Override
@@ -48,6 +48,16 @@ public class MyDictionary<TKey, TElem> implements MyIDictionary<TKey, TElem>{
 
     public boolean isDefined(TKey id){
         return dictionary.containsKey(id);
+    }
+
+    @Override
+    public HashMap<TKey, TElem> getContent() {
+        return dictionary;
+    }
+
+    @Override
+    public void setContent(HashMap<TKey, TElem> content) {
+        dictionary = content;
     }
 
     @Override
