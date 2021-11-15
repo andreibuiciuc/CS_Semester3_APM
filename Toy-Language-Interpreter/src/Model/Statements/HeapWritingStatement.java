@@ -32,12 +32,12 @@ public class HeapWritingStatement implements IStatement {
         Value variableValue = symTable.lookup(variableName);
         Type variableType = variableValue.getType();
 
-        // Check if the type of the variable is Reference Type.
+        // Check if the type of the variable is a Reference Type.
         if(!(variableType instanceof ReferenceType)) {
             throw new InvalidTypeException("Variable " + variableName + " not a reference.");
         }
 
-        // Check if the referenced value is in the Heap.
+        // Check if the referenced value is in the Heap (by checking if the address is a key in the Heap).
         int positionHeap = ((ReferenceValue)variableValue).getHeapAddress();
         if(!heap.isDefined(positionHeap)) {
             throw new VariableDefinitionException("Variable undefined at address: " + positionHeap);
@@ -49,6 +49,7 @@ public class HeapWritingStatement implements IStatement {
         Value referencedValue = heap.lookup(positionHeap);
         Type referencedType = referencedValue.getType();
 
+        // Check if the types are equal.
         if(!expressionType.equals(referencedType)) {
             throw new InvalidTypeException("Referenced type and expression type do not match.");
         }

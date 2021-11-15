@@ -26,15 +26,19 @@ public class CloseReadFileStatement implements IStatement {
 
         Value filePathValue = filePath.eval(symTable, heap);
 
+        // Check if the filepath is a String.
         if(!filePathValue.getType().equals(new StringType())) {
-            throw new InvalidTypeException("Variable is not a string.");
+            throw new InvalidTypeException("Variable not a string.");
         }
 
+        // Check if the filepath is in the File Table.
         if(!fileTable.isDefined((StringValue) filePathValue)) {
-            throw new VariableDefinitionException("File path is not defined in the File Table.");
+            throw new VariableDefinitionException("File path not defined in the File Table.");
         }
 
+        // Get the file descriptor.
         BufferedReader fileBufferReader = fileTable.lookup((StringValue) filePathValue);
+
         fileBufferReader.close();
         fileTable.remove((StringValue) filePathValue);
 

@@ -25,17 +25,17 @@ public class OpenReadFileStatement implements IStatement {
         MyIDictionary<StringValue, BufferedReader> fileTable = state.getFileTable();
         MyIDictionary<Integer, Value> heap = state.getHeap();
 
+        // Check if the provided filepath is a StringType.
         Value filePathValue = filePath.eval(symTable, heap);
-
         if (filePathValue.getType().equals(new StringType())) {
-            // Check if the string values is not already in the FileTable.
-            // cast to StringValue
 
+            // Check whether the filepath is already in the FileTable.
+            // cast to StringValue
             if (fileTable.isDefined((StringValue) filePathValue)) {
                 throw new VariableDefinitionException("File path already in the File Table.");
             }
 
-            // Get the String file path for Buffered Reader.
+            // Open the file.
             String filePathString = ((StringValue) filePathValue).getValue();
             BufferedReader fileBufferReader = new BufferedReader(new FileReader(filePathString));
             fileTable.add((StringValue) filePathValue, fileBufferReader);

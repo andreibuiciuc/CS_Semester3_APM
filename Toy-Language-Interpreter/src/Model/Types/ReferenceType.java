@@ -15,12 +15,7 @@ public class ReferenceType implements Type{
     }
 
     public boolean equals(Object another) {
-        if(another instanceof ReferenceType) {
-            return innerType.equals(((ReferenceType) another).getInnerType());
-        }
-        else {
-            return false;
-        }
+        return another instanceof ReferenceType && innerType.equals(((ReferenceType) another).getInnerType());
     }
 
     @Override

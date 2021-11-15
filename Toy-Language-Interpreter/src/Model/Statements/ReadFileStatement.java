@@ -28,14 +28,14 @@ public class ReadFileStatement implements IStatement{
         MyIDictionary<StringValue, BufferedReader> fileTable = state.getFileTable();
         MyIDictionary<Integer, Value> heap = state.getHeap();
 
-        // Check if the variable is defined.
+        // Check if the variable is defined in the Symbol Table.
         if(!symTable.isDefined(variableName)) {
             throw new VariableDefinitionException("Variable not defined.");
         }
 
         // Check if the variable is an integer.
         if(!symTable.lookup(variableName).getType().equals(new IntType())) {
-            throw new InvalidTypeException("Variable is not an integer.");
+            throw new InvalidTypeException("Variable not an integer.");
         }
 
         // Check if the filePath provided is a string.
@@ -44,12 +44,12 @@ public class ReadFileStatement implements IStatement{
             throw new InvalidTypeException("File path provided not a string.");
         }
 
-        // Check if filePath is in the fileTable.
+        // Check if filePath is in the File Table.
         if(!fileTable.isDefined((StringValue) filePathValue)) {
-            throw new VariableDefinitionException("File path not in the File Table");
+            throw new VariableDefinitionException("File path not in the File Table.");
         }
 
-        String filePathString = ((StringValue)filePathValue).getValue();
+        // Get the file descriptor from the File Table
         BufferedReader fileBufferReader = fileTable.lookup((StringValue) filePathValue);
 
         String line = fileBufferReader.readLine();

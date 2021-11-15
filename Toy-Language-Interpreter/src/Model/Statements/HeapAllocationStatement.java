@@ -4,6 +4,7 @@ import Exceptions.InvalidTypeException;
 import Exceptions.VariableDefinitionException;
 import Model.Expressions.Expression;
 import Model.ProgramState;
+import Model.Types.ReferenceType;
 import Model.Types.Type;
 import Model.Utils.MyHeap;
 import Model.Utils.MyIDictionary;
@@ -24,16 +25,23 @@ public class HeapAllocationStatement implements IStatement {
         MyIDictionary<String, Value> symTable = state.getSymTable();
         MyIDictionary<Integer, Value> heap = state.getHeap();
 
+        // Check if the provided variable is in the Symbol table.
         if(!symTable.isDefined(variableName)) {
-            throw new VariableDefinitionException(variableName + " is not defined in symbol table.");
+            throw new VariableDefinitionException(variableName + " not defined in symbol table.");
         }
 
         Value variableValue = symTable.lookup(variableName);
         Value expressionValue = expression.eval(symTable, heap);
 
+        // Check if the type of the variable is a Reference Type.
+        if(!(variableValue.getType() instanceof ReferenceType)) {
+            throw new InvalidTypeException(variableName + " not a Reference Type.");
+        }
+
         Type referencedType = ((ReferenceValue)variableValue).getLocationType();
         Type expressionType = expressionValue.getType();
 
+        // Check whether the types are equal.
         if(!referencedType.equals(expressionType)) {
             throw new InvalidTypeException("Referenced type and expression type do not match.");
         }

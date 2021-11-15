@@ -3,9 +3,11 @@ package Repository;
 import Model.ProgramState;
 
 public interface IRepository {
-    public void addProgramState(ProgramState programState);
+    void addProgramState(ProgramState programState);
 
-    public void logProgramStateExecution() throws Exception;
+    void logProgramStateExecution() throws Exception;
+
+    void clearLog() throws Exception;
 
     ProgramState getCurrentProgramState();
 }

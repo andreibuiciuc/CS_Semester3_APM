@@ -38,11 +38,6 @@ public class ReferenceValue implements Value {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(heapAddress, locationType);
-    }
-
-    @Override
     public String toString() {
         return "(" + heapAddress + ", " + locationType.toString() + ")";
     }
