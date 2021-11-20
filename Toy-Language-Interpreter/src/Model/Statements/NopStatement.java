@@ -7,6 +7,6 @@ public final class NopStatement implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws Exception {
-        return state;
+        return null;
     }
 }

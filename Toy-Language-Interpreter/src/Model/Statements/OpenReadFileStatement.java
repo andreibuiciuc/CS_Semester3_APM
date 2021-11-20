@@ -44,7 +44,7 @@ public class OpenReadFileStatement implements IStatement {
             throw new InvalidTypeException("Value is not a String Type.");
         }
 
-        return state;
+        return null;
     }
 
     @Override

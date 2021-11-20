@@ -1,5 +1,6 @@
 package Model;
 
+import Exceptions.ADTException;
 import Model.Utils.*;
 import Model.Statements.IStatement;
 import Model.Values.StringValue;
@@ -15,6 +16,9 @@ public class ProgramState {
     private MyIDictionary<Integer, Value> heap;
     // IStatement originalProgram;
 
+    private int threadId;
+    private static int threadCounter = 1;
+
     public ProgramState(MyIStack<IStatement> exeStack, MyIDictionary<String, Value> symTable,
                         MyIList<Value> out, IStatement originalProgram,
                         MyIDictionary<StringValue, BufferedReader> fileTable,
@@ -26,6 +30,13 @@ public class ProgramState {
         this.heap = heap;
         //this.originalProgram = originalProgram;
         this.exeStack.push(originalProgram);
+        threadId = threadIdManager();
+    }
+
+    public static synchronized int threadIdManager() {
+        int id = ProgramState.threadCounter;
+        ProgramState.threadCounter += 1;
+        return id;
     }
 
     public MyIStack<IStatement> getExeStack() {
@@ -68,9 +79,23 @@ public class ProgramState {
         this.heap = heap;
     }
 
+    public Boolean isNotCompleted() {
+        return !exeStack.isEmpty();
+    }
+
+    public ProgramState oneStep() throws Exception {
+        if(exeStack.isEmpty()) {
+            throw new ADTException("Program state stack is empty.");
+        }
+        IStatement currentStatement = exeStack.pop();
+        return currentStatement.execute(this);
+    }
+
+
     @Override
     public String toString() {
-        return  "\nExecution stack:\n" + exeStack + "\n" +
+        return  "\nThread Id: " + threadId + "\n" +
+                "\nExecution stack:\n" + exeStack + "\n" +
                 "Symbols table:\n" + symTable + "\n" +
                 "Out list:\n" + out + " \n" +
                 "File table:\n" + fileTable + "\n" +

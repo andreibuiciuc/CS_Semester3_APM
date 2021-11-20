@@ -37,7 +37,7 @@ public final class AssignmentStatement implements IStatement {
             throw new VariableDefinitionException("The used variable " + id + " was not declared before.");
         }
 
-        return state;
+        return null;
     }
 
     @Override

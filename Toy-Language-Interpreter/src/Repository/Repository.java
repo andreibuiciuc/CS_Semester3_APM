@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Repository implements IRepository{
-    private final List<ProgramState> programsList;
+    private List<ProgramState> programsList;
     private final String logFilePath;
 
     public Repository(String logFilePath) {
@@ -22,18 +22,19 @@ public final class Repository implements IRepository{
         programsList.add(programState);
     }
 
-    @Override
-    public ProgramState getCurrentProgramState() {
-        return programsList.get(programsList.size() - 1);
-    }
+//    @Override
+//    public ProgramState getCurrentProgramState() {
+//        return programsList.get(programsList.size() - 1);
+//    }
 
     @Override
-    public void logProgramStateExecution() throws Exception {
+    public void logProgramStateExecution(ProgramState programState) throws Exception {
         PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
 
-        for(ProgramState programState: this.programsList) {
-            logFile.append(programState.toString());
-        }
+//        for(ProgramState program: this.programsList) {
+//            logFile.append(program.toString());
+//        }
+        logFile.append(programState.toString());
 
         logFile.close();
     }
@@ -45,5 +46,15 @@ public final class Repository implements IRepository{
         PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, false)));
         logFile.write("");
         logFile.close();
+    }
+
+    @Override
+    public List<ProgramState> getProgramsList() {
+        return programsList;
+    }
+
+    @Override
+    public void setProgramsList(List<ProgramState> programsList) {
+        this.programsList = programsList;
     }
 }

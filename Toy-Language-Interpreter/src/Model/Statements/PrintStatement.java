@@ -22,7 +22,7 @@ public final class PrintStatement implements IStatement {
         Value expressionValue = expression.eval(symTable, heap);
         out.addToLastPosition(expressionValue);
 
-        return state;
+        return null;
     }
 
     @Override

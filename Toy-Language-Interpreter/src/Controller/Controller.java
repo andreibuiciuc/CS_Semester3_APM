@@ -7,19 +7,21 @@ import Model.Statements.IStatement;
 import Model.Values.ReferenceValue;
 import Model.Values.Value;
 import Repository.IRepository;
-
-import java.sql.Ref;
-import java.text.CollationElementIterator;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
 public final class Controller {
     private final IRepository repository;
+    private ExecutorService executor;
 
     public Controller(IRepository repository) {
         this.repository = repository;
@@ -41,7 +43,6 @@ public final class Controller {
                        .filter(value -> value instanceof ReferenceValue)
                        .map(value -> {ReferenceValue value1 = (ReferenceValue)value; return value1.getHeapAddress();})
        ).collect(Collectors.toList());
-
     }
 
     // Safe implementation of Garbage Collector
@@ -53,34 +54,77 @@ public final class Controller {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
-    private ProgramState oneStep(ProgramState state) throws Exception {
-        MyIStack<IStatement> exeStack = state.getExeStack();
-        if(exeStack.isEmpty()) {
-            throw new ADTException("Program Execution stack is empty.");
-        }
-        IStatement currentStatement = exeStack.pop();
-        return currentStatement.execute(state);
+    public void oneStepForAllPrograms(List<ProgramState> programsList) throws Exception {
+        programsList.forEach(programState -> {
+            try {
+                repository.logProgramStateExecution(programState);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        // Prepare the list of callables
+        List<Callable<ProgramState>> callList = programsList.stream()
+                .map( (ProgramState p) -> (Callable<ProgramState>)( () -> {return p.oneStep();}))
+                .collect(Collectors.toList());
+
+        // Start the execution of the callables.
+        List<ProgramState> newProgramsList = executor.invokeAll(callList).stream()
+                .map(future -> {
+                    try {
+                        return future.get();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e.getMessage());
+                    }
+
+                })
+                .filter(programState -> programState != null)
+                .collect(Collectors.toList());
+
+        programsList.addAll(newProgramsList);
+
+        programsList.forEach(programState -> {
+            try {
+                repository.logProgramStateExecution(programState);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        repository.setProgramsList(programsList);
     }
 
-    public ProgramState allStep() throws Exception {
-        ProgramState programState = repository.getCurrentProgramState();
 
-        // System.out.println(programState);
-        repository.logProgramStateExecution();
+    public void allStep() throws Exception {
+        repository.clearLog();
 
-        while(!programState.getExeStack().isEmpty()) {
-            oneStep(programState);
+        executor = Executors.newFixedThreadPool(2);
+
+        List<ProgramState> programsList = removeCompletedProgram(repository.getProgramsList());
+
+        while(programsList.size() > 0) {
 
             // System.out.println(programState);
-            repository.logProgramStateExecution();
-
-            programState.getHeap().setContent((HashMap<Integer, Value>)
+            programsList.get(0).getHeap().setContent((HashMap<Integer, Value>)
                     garbageCollector(getAddressesFromSymbolTable(
-                        programState.getSymTable().getContent().values(),
-                        programState.getHeap().getContent().values()
-            ), programState.getHeap().getContent()));
+                        programsList.get(0).getSymTable().getContent().values(),
+                        programsList.get(0).getHeap().getContent().values()
+            ), programsList.get(0).getHeap().getContent()));
+
+            oneStepForAllPrograms(programsList);
+            programsList = removeCompletedProgram(repository.getProgramsList());
+
         }
 
-        return programState;
+        executor.shutdownNow();
+
+        repository.setProgramsList(programsList);
+
+    }
+
+    public List<ProgramState> removeCompletedProgram(List<ProgramState> inputPrograms) {
+        return inputPrograms.stream()
+                .filter(programState -> programState.isNotCompleted())
+                .collect(Collectors.toList());
     }
 }

@@ -22,4 +22,6 @@ public interface MyIDictionary<TKey, TElem> {
     void setContent(HashMap<TKey, TElem> content);
 
     HashMap<TKey, TElem> getContent();
+
+    MyIDictionary<TKey, TElem> clone();
 }

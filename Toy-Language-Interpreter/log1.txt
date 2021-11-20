@@ -7,6 +7,8 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
 
 Execution stack:
 { int v | (v = 2 ; print(v)) }
@@ -15,6 +17,8 @@ Symbols table:
 Out list:
 [] 
 File table:
+{}
+Heap: 
 {}
 
 Execution stack:
@@ -25,6 +29,8 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
 
 Execution stack:
 { v = 2 | print(v) }
@@ -33,6 +39,8 @@ Symbols table:
 Out list:
 [] 
 File table:
+{}
+Heap: 
 {}
 
 Execution stack:
@@ -43,6 +51,8 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
 
 Execution stack:
 {}
@@ -51,4 +61,6 @@ Symbols table:
 Out list:
 [ 2 ] 
 File table:
+{}
+Heap: 
 {}

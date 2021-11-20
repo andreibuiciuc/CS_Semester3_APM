@@ -42,7 +42,7 @@ public final class IfStatement implements IStatement {
         }
         }
 
-        return state;
+        return null;
     }
 
     @Override

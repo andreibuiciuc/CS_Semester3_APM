@@ -61,6 +61,13 @@ public class MyDictionary<TKey, TElem> implements MyIDictionary<TKey, TElem>{
     }
 
     @Override
+    public MyIDictionary<TKey, TElem> clone() {
+        MyIDictionary<TKey, TElem> clonedDictionary = new MyDictionary<>();
+        dictionary.forEach(clonedDictionary::add);
+        return clonedDictionary;
+    }
+
+    @Override
     public String toString() {
         if(dictionary.isEmpty()) {
             return "{}";

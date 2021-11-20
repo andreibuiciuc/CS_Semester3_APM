@@ -60,7 +60,7 @@ public class ReadFileStatement implements IStatement{
             symTable.update(variableName, new IntValue(Integer.parseInt(line)));
         }
 
-        return state;
+        return null;
     }
 
     @Override

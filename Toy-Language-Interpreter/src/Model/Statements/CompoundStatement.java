@@ -18,7 +18,7 @@ public final class CompoundStatement implements IStatement {
         exeStack.push(secondStatement);
         exeStack.push(firstStatement);
 
-        return state;
+        return null;
     }
 
     @Override

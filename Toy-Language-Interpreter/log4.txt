@@ -7,6 +7,8 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
 
 Execution stack:
 { openRead (test.in) | (int varc ; (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))))) }
@@ -16,6 +18,8 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
 
 Execution stack:
 { (int varc ; (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))))) }
@@ -24,7 +28,9 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { int varc | (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in))))) }
@@ -33,7 +39,9 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in))))) }
@@ -42,7 +50,9 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { readFile (test.in) | (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))) }
@@ -51,7 +61,9 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))) }
@@ -60,7 +72,9 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { print(varc) | (readFile (test.in) ; (print(varc) ; closeRead (test.in))) }
@@ -69,7 +83,9 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { (readFile (test.in) ; (print(varc) ; closeRead (test.in))) }
@@ -78,7 +94,9 @@ Symbols table:
 Out list:
 [ 15 ] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { readFile (test.in) | (print(varc) ; closeRead (test.in)) }
@@ -87,40 +105,50 @@ Symbols table:
 Out list:
 [ 15 ] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { (print(varc) ; closeRead (test.in)) }
 Symbols table:
-{ varc -> 50 }
+{ varc -> 0 }
 Out list:
 [ 15 ] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { print(varc) | closeRead (test.in) }
 Symbols table:
-{ varc -> 50 }
+{ varc -> 0 }
 Out list:
 [ 15 ] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 { closeRead (test.in) }
 Symbols table:
-{ varc -> 50 }
+{ varc -> 0 }
 Out list:
-[ 15, 50 ] 
+[ 15, 0 ] 
 File table:
-{ test.in -> java.io.BufferedReader@1a86f2f1 }
+{ test.in -> java.io.BufferedReader@77a567e1 }
+Heap: 
+{}
 
 Execution stack:
 {}
 Symbols table:
-{ varc -> 50 }
+{ varc -> 0 }
 Out list:
-[ 15, 50 ] 
+[ 15, 0 ] 
 File table:
+{}
+Heap: 
 {}

@@ -42,7 +42,7 @@ public class CloseReadFileStatement implements IStatement {
         fileBufferReader.close();
         fileTable.remove((StringValue) filePathValue);
 
-        return state;
+        return null;
 
     }
 

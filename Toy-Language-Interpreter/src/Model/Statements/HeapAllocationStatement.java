@@ -51,7 +51,7 @@ public class HeapAllocationStatement implements IStatement {
 
         symTable.update(variableName, new ReferenceValue(freePosition, referencedType));
 
-        return state;
+        return null;
     }
 
     @Override

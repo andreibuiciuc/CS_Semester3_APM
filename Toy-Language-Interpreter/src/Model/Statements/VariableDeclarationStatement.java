@@ -32,7 +32,7 @@ public final class VariableDeclarationStatement implements IStatement {
             throw new InvalidTypeException("Invalid type.");
         }
 
-        return state;
+        return null;
     }
 
     @Override

@@ -1,4 +1,6 @@
 
+Thread Id: 10
+
 Execution stack:
 { (int v ; (v = 4 ; (while(v > 0) {(print(v) ; v = v - 1) } ; print(v)))) }
 Symbols table:
@@ -9,6 +11,8 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
 
 Execution stack:
 { int v | (v = 4 ; (while(v > 0) {(print(v) ; v = v - 1) } ; print(v))) }
@@ -21,6 +25,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ int v | (v = 4 ; (while(v > 0) {(print(v) ; v = v - 1) } ; print(v))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { (v = 4 ; (while(v > 0) {(print(v) ; v = v - 1) } ; print(v))) }
 Symbols table:
@@ -31,6 +50,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ (v = 4 ; (while(v > 0) {(print(v) ; v = v - 1) } ; print(v))) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { v = 4 | (while(v > 0) {(print(v) ; v = v - 1) } ; print(v)) }
@@ -43,6 +77,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ v = 4 | (while(v > 0) {(print(v) ; v = v - 1) } ; print(v)) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { (while(v > 0) {(print(v) ; v = v - 1) } ; print(v)) }
 Symbols table:
@@ -54,6 +103,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ (while(v > 0) {(print(v) ; v = v - 1) } ; print(v)) }
+Symbols table:
+{ v -> 4 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
 Symbols table:
@@ -64,6 +128,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 4 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { (print(v) ; v = v - 1) | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
@@ -76,6 +155,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ (print(v) ; v = v - 1) | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 4 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { print(v) | v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
 Symbols table:
@@ -86,6 +180,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ print(v) | v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 4 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
@@ -98,6 +207,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 4 }
+Out list:
+[ 4 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
 Symbols table:
@@ -108,6 +232,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 3 }
+Out list:
+[ 4 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { (print(v) ; v = v - 1) | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
@@ -120,6 +259,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ (print(v) ; v = v - 1) | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 3 }
+Out list:
+[ 4 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { print(v) | v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
 Symbols table:
@@ -130,6 +284,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ print(v) | v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 3 }
+Out list:
+[ 4 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
@@ -142,6 +311,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 3 }
+Out list:
+[ 4, 3 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
 Symbols table:
@@ -152,6 +336,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 2 }
+Out list:
+[ 4, 3 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { (print(v) ; v = v - 1) | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
@@ -164,6 +363,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ (print(v) ; v = v - 1) | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 2 }
+Out list:
+[ 4, 3 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { print(v) | v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
 Symbols table:
@@ -174,6 +388,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ print(v) | v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 2 }
+Out list:
+[ 4, 3 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
@@ -186,6 +415,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 2 }
+Out list:
+[ 4, 3, 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
 Symbols table:
@@ -196,6 +440,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 1 }
+Out list:
+[ 4, 3, 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { (print(v) ; v = v - 1) | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
@@ -208,6 +467,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 10
+
+Execution stack:
+{ (print(v) ; v = v - 1) | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 1 }
+Out list:
+[ 4, 3, 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
+
 Execution stack:
 { print(v) | v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
 Symbols table:
@@ -218,6 +492,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ print(v) | v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 1 }
+Out list:
+[ 4, 3, 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
@@ -229,6 +518,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ v = v - 1 | while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 1 }
+Out list:
+[ 4, 3, 2, 1 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
@@ -240,6 +544,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ while(v > 0) {(print(v) ; v = v - 1) } | print(v) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[ 4, 3, 2, 1 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 { print(v) }
@@ -251,6 +570,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 10
+
+Execution stack:
+{ print(v) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[ 4, 3, 2, 1 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 10
 
 Execution stack:
 {}

@@ -239,13 +239,38 @@ public class Interpreter {
         new ArithmeticExpression('-', new VariableExpression("v"), new ValueExpression(new IntValue(1)))))),
         new PrintStatement(new VariableExpression("v")))));
 
-
         ProgramState programState10 = new ProgramState(exeStack10, symTable10, out10, ex10, fileTable10, heap10);
         IRepository repository10 = new Repository("log10.txt");
         Controller controller10 = new Controller(repository10);
         controller10.addProgramState(programState10);
 
         menu.addCommand(new RunExampleCommand("10", ex10.toString(), controller10));
+
+        // Example 11
+        MyIStack<IStatement> exeStack11 = new MyStack<>();
+        MyIDictionary<String, Value> symTable11 = new MyDictionary<>();
+        MyIList<Value> out11 = new MyList<>();
+        MyIDictionary<StringValue, BufferedReader> fileTable11 = new MyDictionary<>();
+        MyIDictionary<Integer, Value> heap11 = new MyHeap<>();
+
+        IStatement ex11 =
+        new CompoundStatement(new VariableDeclarationStatement("v", new IntType()),
+        new CompoundStatement(new VariableDeclarationStatement("a", new ReferenceType(new IntType())),
+        new CompoundStatement(new AssignmentStatement("v", new ValueExpression(new IntValue(10))),
+        new CompoundStatement(new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))),
+        new CompoundStatement(new ForkStatement(new CompoundStatement(new HeapWritingStatement("a", new ValueExpression(new IntValue(30))),
+        new CompoundStatement(new AssignmentStatement("v", new ValueExpression(new IntValue(32))),
+        new CompoundStatement(new PrintStatement(new VariableExpression("v")),
+        new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))))),
+        new CompoundStatement(new PrintStatement(new VariableExpression("v")),
+        new PrintStatement(new HeapReadingExpression(new VariableExpression("a")))))))));
+
+        ProgramState programState11 = new ProgramState(exeStack11, symTable11, out11, ex11, fileTable11, heap11);
+        IRepository repository11 = new Repository("log11.txt");
+        Controller controller11 = new Controller(repository11);
+        controller11.addProgramState(programState11);
+
+        menu.addCommand(new RunExampleCommand("11", ex11.toString(), controller11));
 
         // Show menu
         menu.show();
