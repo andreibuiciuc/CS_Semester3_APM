@@ -6,6 +6,7 @@ import Model.Expressions.Expression;
 import Model.ProgramState;
 import Model.Types.IntType;
 import Model.Types.StringType;
+import Model.Types.Type;
 import Model.Utils.MyIDictionary;
 import Model.Values.IntValue;
 import Model.Values.StringValue;
@@ -61,6 +62,23 @@ public class ReadFileStatement implements IStatement{
         }
 
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        Type typeVariable, typeExpression;
+        typeVariable = typeEnvironment.lookup(variableName);
+        typeExpression = filePath.typeCheck(typeEnvironment);
+
+        if(!typeVariable.equals(new IntType())) {
+            throw new InvalidTypeException("Variable not an integer.");
+        }
+
+        if(!typeExpression.equals(new StringType())) {
+            throw new InvalidTypeException("File path not a string.");
+        }
+
+        return typeEnvironment;
     }
 
     @Override

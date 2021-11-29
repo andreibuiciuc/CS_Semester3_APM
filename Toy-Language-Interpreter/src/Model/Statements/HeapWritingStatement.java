@@ -60,6 +60,19 @@ public class HeapWritingStatement implements IStatement {
     }
 
     @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        Type typeVariable, typeExpression;
+        typeVariable = typeEnvironment.lookup(variableName);
+        typeExpression = expression.typeCheck(typeEnvironment);
+
+        if(!typeVariable.equals(new ReferenceType(typeExpression))) {
+            throw new InvalidTypeException("Right hand side and left hand side of heap writing statement have different types.");
+        }
+
+        return typeEnvironment;
+    }
+
+    @Override
     public String toString() {
         return "wH(" + variableName + ", " + expression.toString() + ")";
     }

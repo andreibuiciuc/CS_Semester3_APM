@@ -1,6 +1,7 @@
 package Model.Expressions;
 
 import Exceptions.InvalidTypeException;
+import Model.Types.Type;
 import Model.Utils.MyIDictionary;
 import Model.Types.BoolType;
 import Model.Values.BoolValue;
@@ -43,5 +44,27 @@ public final class LogicalExpression implements Expression {
             throw new InvalidTypeException("First operand is not a boolean.");
         }
 
+    }
+
+    @Override
+    public Type typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        Type type1, type2;
+        type1 = expression1.typeCheck(typeEnvironment);
+        type2 = expression2.typeCheck(typeEnvironment);
+
+        if(!type1.equals(new BoolType())) {
+            throw new InvalidTypeException("First operand is not a boolean.");
+        }
+
+        if(!type2.equals(new BoolType())) {
+            throw new InvalidTypeException("Second operand is not a boolean.");
+        }
+
+        return new BoolType();
+    }
+
+    @Override
+    public String toString() {
+        return expression1 + " " + operation + " " + expression2;
     }
 }

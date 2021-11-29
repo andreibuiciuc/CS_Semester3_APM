@@ -1,6 +1,7 @@
 package Model.Statements;
 
 import Model.Expressions.Expression;
+import Model.Types.Type;
 import Model.Utils.MyIDictionary;
 import Model.Utils.MyIList;
 import Model.ProgramState;
@@ -23,6 +24,12 @@ public final class PrintStatement implements IStatement {
         out.addToLastPosition(expressionValue);
 
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        expression.typeCheck(typeEnvironment);
+        return typeEnvironment;
     }
 
     @Override

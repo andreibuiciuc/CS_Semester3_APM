@@ -1,6 +1,8 @@
 package Model.Statements;
 
 import Model.ProgramState;
+import Model.Types.Type;
+import Model.Utils.MyIDictionary;
 import Model.Utils.MyIStack;
 import Model.Utils.MyStack;
 
@@ -19,6 +21,11 @@ public class ForkStatement implements IStatement {
 
         return new ProgramState(new MyStack<>(), state.getSymTable().clone(), state.getOut(),
                statement, state.getFileTable(), state.getHeap());
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        return statement.typeCheck(typeEnvironment);
     }
 
     @Override

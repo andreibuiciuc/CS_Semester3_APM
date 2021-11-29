@@ -5,6 +5,7 @@ import Exceptions.VariableDefinitionException;
 import Model.Expressions.Expression;
 import Model.ProgramState;
 import Model.Types.StringType;
+import Model.Types.Type;
 import Model.Utils.MyIDictionary;
 import Model.Values.StringValue;
 import Model.Values.Value;
@@ -45,6 +46,17 @@ public class OpenReadFileStatement implements IStatement {
         }
 
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        Type typeExpression = filePath.typeCheck(typeEnvironment);
+
+        if(!typeExpression.equals(new StringType())) {
+            throw new InvalidTypeException("File path not a string.");
+        }
+
+        return typeEnvironment;
     }
 
     @Override

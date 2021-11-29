@@ -104,7 +104,7 @@ public final class Controller {
 
         while(programsList.size() > 0) {
 
-            // System.out.println(programState);
+//             System.out.println(programState);
             programsList.get(0).getHeap().setContent((HashMap<Integer, Value>)
                     garbageCollector(getAddressesFromSymbolTable(
                         programsList.get(0).getSymTable().getContent().values(),

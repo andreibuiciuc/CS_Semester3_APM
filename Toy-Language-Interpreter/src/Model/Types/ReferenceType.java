@@ -10,7 +10,7 @@ public class ReferenceType implements Type{
         this.innerType = innerType;
     }
 
-    Type getInnerType() {
+    public Type getInnerType() {
         return innerType;
     }
 

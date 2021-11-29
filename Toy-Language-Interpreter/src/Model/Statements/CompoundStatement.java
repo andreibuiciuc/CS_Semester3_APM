@@ -1,5 +1,7 @@
 package Model.Statements;
 
+import Model.Types.Type;
+import Model.Utils.MyIDictionary;
 import Model.Utils.MyIStack;
 import Model.ProgramState;
 
@@ -19,6 +21,11 @@ public final class CompoundStatement implements IStatement {
         exeStack.push(firstStatement);
 
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        return secondStatement.typeCheck(firstStatement.typeCheck(typeEnvironment));
     }
 
     @Override

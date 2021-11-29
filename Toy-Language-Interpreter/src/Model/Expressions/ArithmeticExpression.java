@@ -2,6 +2,7 @@ package Model.Expressions;
 
 import Exceptions.DivisionByZero;
 import Exceptions.InvalidTypeException;
+import Model.Types.Type;
 import Model.Utils.MyIDictionary;
 import Model.Types.IntType;
 import Model.Values.IntValue;
@@ -54,6 +55,23 @@ public final class ArithmeticExpression implements Expression {
             throw new InvalidTypeException("First operand is not an integer.");
         }
 
+    }
+
+    @Override
+    public Type typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        Type type1, type2;
+        type1 = expression1.typeCheck(typeEnvironment);
+        type2 = expression2.typeCheck(typeEnvironment);
+
+        if (!type1.equals(new IntType())) {
+            throw new InvalidTypeException("First operand is not an integer.");
+        }
+
+        if (!type2.equals(new IntType())) {
+            throw new InvalidTypeException("Second operand is not an integer.");
+        }
+
+        return new IntType();
     }
 
     @Override

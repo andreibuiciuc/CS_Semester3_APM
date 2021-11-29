@@ -46,6 +46,19 @@ public final class IfStatement implements IStatement {
     }
 
     @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        Type typeExpression = expression.typeCheck(typeEnvironment);
+
+        if(!typeExpression.equals(new BoolType())) {
+            throw new InvalidTypeException("Condition in if clause is not a boolean.");
+        }
+
+        thenStatement.typeCheck(typeEnvironment.clone());
+        elseStatement.typeCheck(typeEnvironment.clone());
+        return typeEnvironment;
+    }
+
+    @Override
     public String toString() {
         return "if(" + expression.toString() + ") then (" + thenStatement.toString() + ") else (" +
                 elseStatement.toString() + "))";

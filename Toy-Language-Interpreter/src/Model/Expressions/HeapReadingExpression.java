@@ -1,6 +1,9 @@
 package Model.Expressions;
 
+import Exceptions.InvalidTypeException;
 import Exceptions.VariableDefinitionException;
+import Model.Types.ReferenceType;
+import Model.Types.Type;
 import Model.Utils.MyIDictionary;
 import Model.Values.ReferenceValue;
 import Model.Values.Value;
@@ -31,6 +34,18 @@ public class HeapReadingExpression implements Expression {
 
         // Get the value from the respective address.
         return heap.lookup(heapAddress);
+    }
+
+    @Override
+    public Type typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        Type type = expression.typeCheck(typeEnvironment);
+
+        if(!(type instanceof ReferenceType)) {
+            throw new InvalidTypeException("Argument of Heap Reading is not a Reference Type.");
+        }
+
+        ReferenceType referenceType = (ReferenceType) type;
+        return referenceType.getInnerType();
     }
 
     @Override

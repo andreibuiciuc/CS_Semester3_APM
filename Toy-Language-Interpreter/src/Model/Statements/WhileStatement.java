@@ -3,6 +3,8 @@ package Model.Statements;
 import Exceptions.InvalidTypeException;
 import Model.Expressions.Expression;
 import Model.ProgramState;
+import Model.Types.BoolType;
+import Model.Types.Type;
 import Model.Utils.MyIDictionary;
 import Model.Utils.MyIStack;
 import Model.Values.BoolValue;
@@ -25,7 +27,7 @@ public class WhileStatement implements IStatement{
 
         Value value = expression.eval(symTable, heap);
         if(!(value instanceof BoolValue)) {
-            throw new InvalidTypeException("Condition in while not a boolean.");
+            throw new InvalidTypeException("Condition in while statement not a boolean.");
         }
 
         if(((BoolValue) value).getValue()) {
@@ -34,6 +36,17 @@ public class WhileStatement implements IStatement{
         }
 
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
+        Type typeExpression = expression.typeCheck(typeEnvironment);
+
+        if(!typeExpression.equals(new BoolType())) {
+            throw new InvalidTypeException("Condition in while statement not a boolean");
+        }
+
+        return typeEnvironment;
     }
 
     @Override

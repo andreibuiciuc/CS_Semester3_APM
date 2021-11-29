@@ -7,6 +7,7 @@ import Model.Statements.*;
 import Model.Types.BoolType;
 import Model.Types.IntType;
 import Model.Types.ReferenceType;
+import Model.Types.Type;
 import Model.Utils.*;
 import Model.Values.BoolValue;
 import Model.Values.IntValue;
@@ -34,8 +35,15 @@ public class Interpreter {
         IStatement ex1 = new CompoundStatement(new VariableDeclarationStatement("v", new IntType()),
         new CompoundStatement(new AssignmentStatement("v", new ValueExpression(new IntValue(2))),
         new PrintStatement(new VariableExpression("v"))));
-        ProgramState programState1 = new ProgramState(exeStack1, symTable1, out1, ex1, fileTable1, heap1);
 
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex1.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
+
+        ProgramState programState1 = new ProgramState(exeStack1, symTable1, out1, ex1, fileTable1, heap1);
         IRepository repository1 = new Repository("log1.txt");
         Controller controller1 = new Controller(repository1);
         controller1.addProgramState(programState1);
@@ -55,8 +63,15 @@ public class Interpreter {
         new ArithmeticExpression('*', new ValueExpression(new IntValue(3)), new ValueExpression(new IntValue(5))))),
         new CompoundStatement(new AssignmentStatement("b", new ArithmeticExpression('+', new VariableExpression("a"),
         new ValueExpression(new IntValue(1)))), new PrintStatement(new VariableExpression("b"))))));
-        ProgramState programState2 = new ProgramState(exeStack2, symTable2, out2, ex2, fileTable2, heap2);
 
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex2.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
+
+        ProgramState programState2 = new ProgramState(exeStack2, symTable2, out2, ex2, fileTable2, heap2);
         IRepository repository2 = new Repository("log2.txt");
         Controller controller2 = new Controller(repository2);
         controller2.addProgramState(programState2);
@@ -76,8 +91,15 @@ public class Interpreter {
         new CompoundStatement(new IfStatement(new VariableExpression("a"),
         new AssignmentStatement("v",new ValueExpression(new IntValue(2))),
         new AssignmentStatement("v", new ValueExpression(new IntValue(3)))), new PrintStatement(new VariableExpression("v"))))));
-        ProgramState programState3 = new ProgramState(exeStack3, symTable3, out3, ex3, fileTable3, heap3);
 
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex3.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
+
+        ProgramState programState3 = new ProgramState(exeStack3, symTable3, out3, ex3, fileTable3, heap3);
         IRepository repository3 = new Repository("log3.txt");
         Controller controller3 = new Controller(repository3);
         controller3.addProgramState(programState3);
@@ -102,6 +124,13 @@ public class Interpreter {
         new CompoundStatement(new PrintStatement(new VariableExpression("varc")),
         new CloseReadFileStatement(fileNameExample)))))));
 
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex4.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
+
         ProgramState programState4 = new ProgramState(exeStack4, symTable4, out4, ex4, fileTable4, heap4);
         IRepository repository4 = new Repository("log4.txt");
         Controller controller4 = new Controller(repository4);
@@ -123,6 +152,13 @@ public class Interpreter {
         new IfStatement(new RelationalExpression(new VariableExpression("a"),
         new VariableExpression("b"), ">"), new PrintStatement(new VariableExpression("a")),
         new PrintStatement(new VariableExpression("b"))))));
+
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex5.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
 
         ProgramState programState5 = new ProgramState(exeStack5, symTable5, out5, ex5, fileTable5, heap5);
         IRepository repository5 = new Repository("log5.txt");
@@ -147,6 +183,13 @@ public class Interpreter {
         new CompoundStatement(new PrintStatement(new VariableExpression("v")),
         new PrintStatement(new VariableExpression("a")))))));
 
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex6.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
+
         ProgramState programState6 = new ProgramState(exeStack6, symTable6, out6, ex6, fileTable6, heap6);
         IRepository repository6 = new Repository("log6.txt");
         Controller controller6 = new Controller(repository6);
@@ -170,6 +213,13 @@ public class Interpreter {
         new PrintStatement(new ArithmeticExpression('+', new HeapReadingExpression(new HeapReadingExpression(
         new VariableExpression("a"))), new ValueExpression(new IntValue(5)))))))));
 
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex7.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
+
         ProgramState programState7 = new ProgramState(exeStack7, symTable7, out7, ex7, fileTable7, heap7);
         IRepository repository7 = new Repository("log7.txt");
         Controller controller7 = new Controller(repository7);
@@ -191,6 +241,13 @@ public class Interpreter {
         new CompoundStatement(new HeapWritingStatement("v", new ValueExpression(new IntValue(30))),
         new PrintStatement(new ArithmeticExpression('+', new HeapReadingExpression(new VariableExpression("v")),
         new ValueExpression(new IntValue(5))))))));
+
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex8.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
 
         ProgramState programState8 = new ProgramState(exeStack8, symTable8, out8, ex8, fileTable8, heap8);
         IRepository repository8 = new Repository("log8.txt");
@@ -215,6 +272,13 @@ public class Interpreter {
         new CompoundStatement(new HeapAllocationStatement("v", new ValueExpression(new IntValue(30))),
         new PrintStatement(new HeapReadingExpression(new HeapReadingExpression(new VariableExpression("a")))))))));
 
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex9.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
+
         ProgramState programState9 = new ProgramState(exeStack9, symTable9, out9, ex9, fileTable9, heap9);
         IRepository repository9 = new Repository("log9.txt");
         Controller controller9 = new Controller(repository9);
@@ -238,6 +302,13 @@ public class Interpreter {
         new PrintStatement(new VariableExpression("v")), new AssignmentStatement("v",
         new ArithmeticExpression('-', new VariableExpression("v"), new ValueExpression(new IntValue(1)))))),
         new PrintStatement(new VariableExpression("v")))));
+
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex10.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
 
         ProgramState programState10 = new ProgramState(exeStack10, symTable10, out10, ex10, fileTable10, heap10);
         IRepository repository10 = new Repository("log10.txt");
@@ -264,6 +335,13 @@ public class Interpreter {
         new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))))),
         new CompoundStatement(new PrintStatement(new VariableExpression("v")),
         new PrintStatement(new HeapReadingExpression(new VariableExpression("a")))))))));
+
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex11.typeCheck(typeEnvironment);
+        } catch (Exception e) {
+            System.out.println();
+        }
 
         ProgramState programState11 = new ProgramState(exeStack11, symTable11, out11, ex11, fileTable11, heap11);
         IRepository repository11 = new Repository("log11.txt");
