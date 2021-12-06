@@ -1,4 +1,6 @@
 
+Thread Id: 4
+
 Execution stack:
 { (openRead (test.in) ; (int varc ; (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in))))))) }
 Symbols table:
@@ -9,6 +11,8 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 4
 
 Execution stack:
 { openRead (test.in) | (int varc ; (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))))) }
@@ -21,6 +25,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 4
+
+Execution stack:
+{ openRead (test.in) | (int varc ; (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 4
+
 Execution stack:
 { (int varc ; (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))))) }
 Symbols table:
@@ -28,9 +47,24 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ (int varc ; (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { int varc | (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in))))) }
@@ -39,9 +73,24 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ int varc | (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in))))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in))))) }
@@ -50,9 +99,24 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ (readFile (test.in) ; (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in))))) }
+Symbols table:
+{ varc -> 0 }
+Out list:
+[] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { readFile (test.in) | (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))) }
@@ -61,9 +125,24 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ readFile (test.in) | (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))) }
+Symbols table:
+{ varc -> 0 }
+Out list:
+[] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))) }
@@ -72,9 +151,24 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ (print(varc) ; (readFile (test.in) ; (print(varc) ; closeRead (test.in)))) }
+Symbols table:
+{ varc -> 15 }
+Out list:
+[] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { print(varc) | (readFile (test.in) ; (print(varc) ; closeRead (test.in))) }
@@ -83,9 +177,24 @@ Symbols table:
 Out list:
 [] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ print(varc) | (readFile (test.in) ; (print(varc) ; closeRead (test.in))) }
+Symbols table:
+{ varc -> 15 }
+Out list:
+[] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { (readFile (test.in) ; (print(varc) ; closeRead (test.in))) }
@@ -94,9 +203,24 @@ Symbols table:
 Out list:
 [ 15 ] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ (readFile (test.in) ; (print(varc) ; closeRead (test.in))) }
+Symbols table:
+{ varc -> 15 }
+Out list:
+[ 15 ] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { readFile (test.in) | (print(varc) ; closeRead (test.in)) }
@@ -105,9 +229,24 @@ Symbols table:
 Out list:
 [ 15 ] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ readFile (test.in) | (print(varc) ; closeRead (test.in)) }
+Symbols table:
+{ varc -> 15 }
+Out list:
+[ 15 ] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { (print(varc) ; closeRead (test.in)) }
@@ -116,9 +255,24 @@ Symbols table:
 Out list:
 [ 15 ] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ (print(varc) ; closeRead (test.in)) }
+Symbols table:
+{ varc -> 0 }
+Out list:
+[ 15 ] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { print(varc) | closeRead (test.in) }
@@ -127,9 +281,24 @@ Symbols table:
 Out list:
 [ 15 ] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ print(varc) | closeRead (test.in) }
+Symbols table:
+{ varc -> 0 }
+Out list:
+[ 15 ] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 { closeRead (test.in) }
@@ -138,9 +307,24 @@ Symbols table:
 Out list:
 [ 15, 0 ] 
 File table:
-{ test.in -> java.io.BufferedReader@77a567e1 }
+{ test.in -> java.io.BufferedReader@50134894 }
 Heap: 
 {}
+
+Thread Id: 4
+
+Execution stack:
+{ closeRead (test.in) }
+Symbols table:
+{ varc -> 0 }
+Out list:
+[ 15, 0 ] 
+File table:
+{ test.in -> java.io.BufferedReader@50134894 }
+Heap: 
+{}
+
+Thread Id: 4
 
 Execution stack:
 {}

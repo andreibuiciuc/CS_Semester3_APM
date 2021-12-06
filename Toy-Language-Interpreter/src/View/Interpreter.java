@@ -17,6 +17,7 @@ import Repository.IRepository;
 import Repository.Repository;
 
 import java.io.BufferedReader;
+import java.sql.Ref;
 
 public class Interpreter {
 
@@ -39,16 +40,16 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex1.typeCheck(typeEnvironment);
+
+            ProgramState programState1 = new ProgramState(exeStack1, symTable1, out1, ex1, fileTable1, heap1);
+            IRepository repository1 = new Repository("log1.txt");
+            Controller controller1 = new Controller(repository1);
+            controller1.addProgramState(programState1);
+
+            menu.addCommand(new RunExampleCommand("1", ex1.toString(), controller1));
         } catch (Exception e) {
             System.out.println();
         }
-
-        ProgramState programState1 = new ProgramState(exeStack1, symTable1, out1, ex1, fileTable1, heap1);
-        IRepository repository1 = new Repository("log1.txt");
-        Controller controller1 = new Controller(repository1);
-        controller1.addProgramState(programState1);
-
-        menu.addCommand(new RunExampleCommand("1", ex1.toString(), controller1));
 
         // Example 2
         MyIStack<IStatement> exeStack2 = new MyStack<>();
@@ -67,16 +68,17 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex2.typeCheck(typeEnvironment);
+
+            ProgramState programState2 = new ProgramState(exeStack2, symTable2, out2, ex2, fileTable2, heap2);
+            IRepository repository2 = new Repository("log2.txt");
+            Controller controller2 = new Controller(repository2);
+            controller2.addProgramState(programState2);
+
+            menu.addCommand(new RunExampleCommand("2", ex2.toString(), controller2));
         } catch (Exception e) {
             System.out.println();
         }
 
-        ProgramState programState2 = new ProgramState(exeStack2, symTable2, out2, ex2, fileTable2, heap2);
-        IRepository repository2 = new Repository("log2.txt");
-        Controller controller2 = new Controller(repository2);
-        controller2.addProgramState(programState2);
-
-        menu.addCommand(new RunExampleCommand("2", ex2.toString(), controller2));
 
         // Example 3
         MyIStack<IStatement> exeStack3 = new MyStack<>();
@@ -95,18 +97,18 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex3.typeCheck(typeEnvironment);
+
+            ProgramState programState3 = new ProgramState(exeStack3, symTable3, out3, ex3, fileTable3, heap3);
+            IRepository repository3 = new Repository("log3.txt");
+            Controller controller3 = new Controller(repository3);
+            controller3.addProgramState(programState3);
+
+            menu.addCommand(new RunExampleCommand("3", ex3.toString(), controller3));
         } catch (Exception e) {
             System.out.println();
         }
 
-        ProgramState programState3 = new ProgramState(exeStack3, symTable3, out3, ex3, fileTable3, heap3);
-        IRepository repository3 = new Repository("log3.txt");
-        Controller controller3 = new Controller(repository3);
-        controller3.addProgramState(programState3);
 
-        menu.addCommand(new RunExampleCommand("3", ex3.toString(), controller3));
-
-        
         // Example 4
         MyIStack<IStatement> exeStack4 = new MyStack<>();
         MyIDictionary<String, Value> symTable4 = new MyDictionary<>();
@@ -127,16 +129,17 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex4.typeCheck(typeEnvironment);
+
+            ProgramState programState4 = new ProgramState(exeStack4, symTable4, out4, ex4, fileTable4, heap4);
+            IRepository repository4 = new Repository("log4.txt");
+            Controller controller4 = new Controller(repository4);
+            controller4.addProgramState(programState4);
+
+            menu.addCommand(new RunExampleCommand("4", ex4.toString(), controller4));
         } catch (Exception e) {
             System.out.println();
         }
 
-        ProgramState programState4 = new ProgramState(exeStack4, symTable4, out4, ex4, fileTable4, heap4);
-        IRepository repository4 = new Repository("log4.txt");
-        Controller controller4 = new Controller(repository4);
-        controller4.addProgramState(programState4);
-
-        menu.addCommand(new RunExampleCommand("4", ex4.toString(), controller4));
 
         // Example 5
         MyIStack<IStatement> exeStack5 = new MyStack<>();
@@ -156,16 +159,17 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex5.typeCheck(typeEnvironment);
+
+            ProgramState programState5 = new ProgramState(exeStack5, symTable5, out5, ex5, fileTable5, heap5);
+            IRepository repository5 = new Repository("log5.txt");
+            Controller controller5 = new Controller(repository5);
+            controller5.addProgramState(programState5);
+
+            menu.addCommand(new RunExampleCommand("5", ex5.toString(), controller5));
         } catch (Exception e) {
             System.out.println();
         }
 
-        ProgramState programState5 = new ProgramState(exeStack5, symTable5, out5, ex5, fileTable5, heap5);
-        IRepository repository5 = new Repository("log5.txt");
-        Controller controller5 = new Controller(repository5);
-        controller5.addProgramState(programState5);
-
-        menu.addCommand(new RunExampleCommand("5", ex5.toString(), controller5));
 
         // Example 6
         // Ref int v;new(v,20);Ref Ref int a; new(a,v);print(v);print(a)
@@ -186,16 +190,17 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex6.typeCheck(typeEnvironment);
+
+            ProgramState programState6 = new ProgramState(exeStack6, symTable6, out6, ex6, fileTable6, heap6);
+            IRepository repository6 = new Repository("log6.txt");
+            Controller controller6 = new Controller(repository6);
+            controller6.addProgramState(programState6);
+
+            menu.addCommand(new RunExampleCommand("6", ex6.toString(), controller6));
         } catch (Exception e) {
             System.out.println();
         }
 
-        ProgramState programState6 = new ProgramState(exeStack6, symTable6, out6, ex6, fileTable6, heap6);
-        IRepository repository6 = new Repository("log6.txt");
-        Controller controller6 = new Controller(repository6);
-        controller6.addProgramState(programState6);
-
-        menu.addCommand(new RunExampleCommand("6", ex6.toString(), controller6));
 
         // Example 7
         MyIStack<IStatement> exeStack7 = new MyStack<>();
@@ -216,16 +221,17 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex7.typeCheck(typeEnvironment);
+
+            ProgramState programState7 = new ProgramState(exeStack7, symTable7, out7, ex7, fileTable7, heap7);
+            IRepository repository7 = new Repository("log7.txt");
+            Controller controller7 = new Controller(repository7);
+            controller7.addProgramState(programState7);
+
+            menu.addCommand(new RunExampleCommand("7", ex7.toString(), controller7));
         } catch (Exception e) {
             System.out.println();
         }
 
-        ProgramState programState7 = new ProgramState(exeStack7, symTable7, out7, ex7, fileTable7, heap7);
-        IRepository repository7 = new Repository("log7.txt");
-        Controller controller7 = new Controller(repository7);
-        controller7.addProgramState(programState7);
-
-        menu.addCommand(new RunExampleCommand("7", ex7.toString(), controller7));
 
         // Example 8
         MyIStack<IStatement> exeStack8 = new MyStack<>();
@@ -245,16 +251,17 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex8.typeCheck(typeEnvironment);
+
+            ProgramState programState8 = new ProgramState(exeStack8, symTable8, out8, ex8, fileTable8, heap8);
+            IRepository repository8 = new Repository("log8.txt");
+            Controller controller8 = new Controller(repository8);
+            controller8.addProgramState(programState8);
+
+            menu.addCommand(new RunExampleCommand("8", ex8.toString(), controller8));
         } catch (Exception e) {
             System.out.println();
         }
 
-        ProgramState programState8 = new ProgramState(exeStack8, symTable8, out8, ex8, fileTable8, heap8);
-        IRepository repository8 = new Repository("log8.txt");
-        Controller controller8 = new Controller(repository8);
-        controller8.addProgramState(programState8);
-
-        menu.addCommand(new RunExampleCommand("8", ex8.toString(), controller8));
 
         // Example 9
         // Ref int v;new(v,20);Ref Ref int a; new(a,v); new(v,30);print(rH(rH(a)))
@@ -275,16 +282,16 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex9.typeCheck(typeEnvironment);
+
+            ProgramState programState9 = new ProgramState(exeStack9, symTable9, out9, ex9, fileTable9, heap9);
+            IRepository repository9 = new Repository("log9.txt");
+            Controller controller9 = new Controller(repository9);
+            controller9.addProgramState(programState9);
+
+            menu.addCommand(new RunExampleCommand("9", ex9.toString(), controller9));
         } catch (Exception e) {
             System.out.println();
         }
-
-        ProgramState programState9 = new ProgramState(exeStack9, symTable9, out9, ex9, fileTable9, heap9);
-        IRepository repository9 = new Repository("log9.txt");
-        Controller controller9 = new Controller(repository9);
-        controller9.addProgramState(programState9);
-
-        menu.addCommand(new RunExampleCommand("9", ex9.toString(), controller9));
 
 
         // Example 10
@@ -306,16 +313,17 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex10.typeCheck(typeEnvironment);
+
+            ProgramState programState10 = new ProgramState(exeStack10, symTable10, out10, ex10, fileTable10, heap10);
+            IRepository repository10 = new Repository("log10.txt");
+            Controller controller10 = new Controller(repository10);
+            controller10.addProgramState(programState10);
+
+            menu.addCommand(new RunExampleCommand("10", ex10.toString(), controller10));
         } catch (Exception e) {
             System.out.println();
         }
 
-        ProgramState programState10 = new ProgramState(exeStack10, symTable10, out10, ex10, fileTable10, heap10);
-        IRepository repository10 = new Repository("log10.txt");
-        Controller controller10 = new Controller(repository10);
-        controller10.addProgramState(programState10);
-
-        menu.addCommand(new RunExampleCommand("10", ex10.toString(), controller10));
 
         // Example 11
         MyIStack<IStatement> exeStack11 = new MyStack<>();
@@ -339,16 +347,79 @@ public class Interpreter {
         try {
             MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
             ex11.typeCheck(typeEnvironment);
+
+            ProgramState programState11 = new ProgramState(exeStack11, symTable11, out11, ex11, fileTable11, heap11);
+            IRepository repository11 = new Repository("log11.txt");
+            Controller controller11 = new Controller(repository11);
+            controller11.addProgramState(programState11);
+
+            menu.addCommand(new RunExampleCommand("11", ex11.toString(), controller11));
         } catch (Exception e) {
             System.out.println();
         }
 
-        ProgramState programState11 = new ProgramState(exeStack11, symTable11, out11, ex11, fileTable11, heap11);
-        IRepository repository11 = new Repository("log11.txt");
-        Controller controller11 = new Controller(repository11);
-        controller11.addProgramState(programState11);
+        // Example 12
+        // int v; fork( v=2; print(v) ); fork( v=1; v=v-1; print(v) )
+        MyIStack<IStatement> exeStack12 = new MyStack<>();
+        MyIDictionary<String, Value> symTable12 = new MyDictionary<>();
+        MyIList<Value> out12 = new MyList<>();
+        MyIDictionary<StringValue, BufferedReader> fileTable12 = new MyDictionary<>();
+        MyIDictionary<Integer, Value> heap12 = new MyHeap<>();
 
-        menu.addCommand(new RunExampleCommand("11", ex11.toString(), controller11));
+        IStatement ex12 =
+        new CompoundStatement(new VariableDeclarationStatement("v", new IntType()),
+        new CompoundStatement(new ForkStatement(new CompoundStatement(new AssignmentStatement("v",
+        new ValueExpression(new IntValue(2))), new PrintStatement(new VariableExpression("v")))),
+        new ForkStatement(new CompoundStatement(new AssignmentStatement("v", new ValueExpression(
+        new IntValue(1))), new CompoundStatement(new AssignmentStatement("v", new ArithmeticExpression('-',
+        new VariableExpression("v"), new ValueExpression(new IntValue(1)))),
+        new PrintStatement(new VariableExpression("v")))))));
+
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex12.typeCheck(typeEnvironment);
+
+            ProgramState programState12 = new ProgramState(exeStack12, symTable12, out12, ex12, fileTable12, heap12);
+            IRepository repository12 = new Repository("log12.txt");
+            Controller controller12 = new Controller(repository12);
+            controller12.addProgramState(programState12);
+
+            menu.addCommand(new RunExampleCommand("12", ex12.toString(), controller12));
+        } catch (Exception e) {
+            System.out.println();
+        }
+
+        // Example 13
+        // Ref int a; new(a, 0), fork( wH(a, 10), print(rH(a)), fork(wH(a, 20), print(rH(a))) print(rH(a))
+        MyIStack<IStatement> exeStack13 = new MyStack<>();
+        MyIDictionary<String, Value> symTable13 = new MyDictionary<>();
+        MyIList<Value> out13 = new MyList<>();
+        MyIDictionary<StringValue, BufferedReader> fileTable13 = new MyDictionary<>();
+        MyIDictionary<Integer, Value> heap13 = new MyHeap<>();
+
+        IStatement ex13 =
+        new CompoundStatement(new VariableDeclarationStatement("a", new ReferenceType(new IntType())),
+        new CompoundStatement(new HeapAllocationStatement("a", new ValueExpression(new IntValue())),
+        new CompoundStatement(new ForkStatement(new CompoundStatement(new HeapWritingStatement("a",
+        new ValueExpression(new IntValue(10))),new CompoundStatement(new PrintStatement(
+        new HeapReadingExpression(new VariableExpression("a"))), new ForkStatement(
+        new CompoundStatement(new HeapWritingStatement("a", new ValueExpression(new IntValue(20))),
+        new PrintStatement(new HeapReadingExpression(new VariableExpression("a")))))))),
+        new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))));
+
+        try {
+            MyIDictionary<String, Type> typeEnvironment = new MyDictionary<>();
+            ex13.typeCheck(typeEnvironment);
+
+            ProgramState programState13 = new ProgramState(exeStack13, symTable13, out13, ex13, fileTable13, heap13);
+            IRepository repository13 = new Repository("log13.txt");
+            Controller controller13 = new Controller(repository13);
+            controller13.addProgramState(programState13);
+
+            menu.addCommand(new RunExampleCommand("13", ex12.toString(), controller13));
+        } catch (Exception e) {
+            System.out.println();
+        }
 
         // Show menu
         menu.show();

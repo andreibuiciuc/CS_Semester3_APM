@@ -1,0 +1,364 @@
+
+Thread Id: 12
+
+Execution stack:
+{ (int v ; (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v)))))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 12
+
+Execution stack:
+{ int v | (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v))))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 12
+
+Execution stack:
+{ int v | (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v))))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 12
+
+Execution stack:
+{ (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v))))) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 12
+
+Execution stack:
+{ (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v))))) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 12
+
+Execution stack:
+{ Fork((v = 2 ; print(v))) | Fork((v = 1 ; (v = v - 1 ; print(v)))) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 12
+
+Execution stack:
+{ Fork((v = 2 ; print(v))) | Fork((v = 1 ; (v = v - 1 ; print(v)))) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 12
+
+Execution stack:
+{ Fork((v = 1 ; (v = v - 1 ; print(v)))) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ (v = 2 ; print(v)) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 12
+
+Execution stack:
+{ Fork((v = 1 ; (v = v - 1 ; print(v)))) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ (v = 2 ; print(v)) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 12
+
+Execution stack:
+{}
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ v = 2 | print(v) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ (v = 1 ; (v = v - 1 ; print(v))) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ v = 2 | print(v) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ (v = 1 ; (v = v - 1 ; print(v))) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ print(v) }
+Symbols table:
+{ v -> 2 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ v = 1 | (v = v - 1 ; print(v)) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ print(v) }
+Symbols table:
+{ v -> 2 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ v = 1 | (v = v - 1 ; print(v)) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{}
+Symbols table:
+{ v -> 2 }
+Out list:
+[ 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ (v = v - 1 ; print(v)) }
+Symbols table:
+{ v -> 1 }
+Out list:
+[ 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ (v = v - 1 ; print(v)) }
+Symbols table:
+{ v -> 1 }
+Out list:
+[ 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ v = v - 1 | print(v) }
+Symbols table:
+{ v -> 1 }
+Out list:
+[ 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ v = v - 1 | print(v) }
+Symbols table:
+{ v -> 1 }
+Out list:
+[ 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ print(v) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[ 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{ print(v) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[ 2 ] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 14
+
+Execution stack:
+{}
+Symbols table:
+{ v -> 0 }
+Out list:
+[ 2, 0 ] 
+File table:
+{}
+Heap: 
+{}

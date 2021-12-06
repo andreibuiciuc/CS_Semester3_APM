@@ -1,4 +1,6 @@
 
+Thread Id: 2
+
 Execution stack:
 { (int a ; (int b ; (a = 2 + 3 * 5 ; (b = a + 1 ; print(b))))) }
 Symbols table:
@@ -7,6 +9,10 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
+
+Thread Id: 2
 
 Execution stack:
 { int a | (int b ; (a = 2 + 3 * 5 ; (b = a + 1 ; print(b)))) }
@@ -16,6 +22,23 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
+
+Thread Id: 2
+
+Execution stack:
+{ int a | (int b ; (a = 2 + 3 * 5 ; (b = a + 1 ; print(b)))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 2
 
 Execution stack:
 { (int b ; (a = 2 + 3 * 5 ; (b = a + 1 ; print(b)))) }
@@ -25,6 +48,23 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
+
+Thread Id: 2
+
+Execution stack:
+{ (int b ; (a = 2 + 3 * 5 ; (b = a + 1 ; print(b)))) }
+Symbols table:
+{ a -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 2
 
 Execution stack:
 { int b | (a = 2 + 3 * 5 ; (b = a + 1 ; print(b))) }
@@ -34,6 +74,23 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
+
+Thread Id: 2
+
+Execution stack:
+{ int b | (a = 2 + 3 * 5 ; (b = a + 1 ; print(b))) }
+Symbols table:
+{ a -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 2
 
 Execution stack:
 { (a = 2 + 3 * 5 ; (b = a + 1 ; print(b))) }
@@ -43,6 +100,23 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
+
+Thread Id: 2
+
+Execution stack:
+{ (a = 2 + 3 * 5 ; (b = a + 1 ; print(b))) }
+Symbols table:
+{ a -> 0, b -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 2
 
 Execution stack:
 { a = 2 + 3 * 5 | (b = a + 1 ; print(b)) }
@@ -52,6 +126,23 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
+
+Thread Id: 2
+
+Execution stack:
+{ a = 2 + 3 * 5 | (b = a + 1 ; print(b)) }
+Symbols table:
+{ a -> 0, b -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 2
 
 Execution stack:
 { (b = a + 1 ; print(b)) }
@@ -61,6 +152,23 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
+
+Thread Id: 2
+
+Execution stack:
+{ (b = a + 1 ; print(b)) }
+Symbols table:
+{ a -> 17, b -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 2
 
 Execution stack:
 { b = a + 1 | print(b) }
@@ -70,6 +178,23 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
+
+Thread Id: 2
+
+Execution stack:
+{ b = a + 1 | print(b) }
+Symbols table:
+{ a -> 17, b -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 2
 
 Execution stack:
 { print(b) }
@@ -79,6 +204,23 @@ Out list:
 [] 
 File table:
 {}
+Heap: 
+{}
+
+Thread Id: 2
+
+Execution stack:
+{ print(b) }
+Symbols table:
+{ a -> 17, b -> 18 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 2
 
 Execution stack:
 {}
@@ -87,4 +229,6 @@ Symbols table:
 Out list:
 [ 18 ] 
 File table:
+{}
+Heap: 
 {}

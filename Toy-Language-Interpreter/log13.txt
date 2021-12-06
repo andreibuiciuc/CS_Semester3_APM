@@ -1,0 +1,416 @@
+
+Thread Id: 13
+
+Execution stack:
+{ (Ref int a ; (new(a,0) ; (Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) ; print(rH(a))))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ Ref int a | (new(a,0) ; (Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) ; print(rH(a)))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ Ref int a | (new(a,0) ; (Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) ; print(rH(a)))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ (new(a,0) ; (Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) ; print(rH(a)))) }
+Symbols table:
+{ a -> (0, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ (new(a,0) ; (Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) ; print(rH(a)))) }
+Symbols table:
+{ a -> (0, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ new(a,0) | (Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) ; print(rH(a))) }
+Symbols table:
+{ a -> (0, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ new(a,0) | (Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) ; print(rH(a))) }
+Symbols table:
+{ a -> (0, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 13
+
+Execution stack:
+{ (Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) ; print(rH(a))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 13
+
+Execution stack:
+{ (Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) ; print(rH(a))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 13
+
+Execution stack:
+{ Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) | print(rH(a)) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 13
+
+Execution stack:
+{ Fork((wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))))) | print(rH(a)) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 13
+
+Execution stack:
+{ print(rH(a)) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 14
+
+Execution stack:
+{ (wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a)))))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 13
+
+Execution stack:
+{ print(rH(a)) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 14
+
+Execution stack:
+{ (wH(a, 10) ; (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a)))))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 13
+
+Execution stack:
+{}
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 14
+
+Execution stack:
+{ wH(a, 10) | (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 14
+
+Execution stack:
+{ wH(a, 10) | (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 0 }
+
+Thread Id: 14
+
+Execution stack:
+{ (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 14
+
+Execution stack:
+{ (print(rH(a)) ; Fork((wH(a, 20) ; print(rH(a))))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 14
+
+Execution stack:
+{ print(rH(a)) | Fork((wH(a, 20) ; print(rH(a)))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 14
+
+Execution stack:
+{ print(rH(a)) | Fork((wH(a, 20) ; print(rH(a)))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 14
+
+Execution stack:
+{ Fork((wH(a, 20) ; print(rH(a)))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 14
+
+Execution stack:
+{ Fork((wH(a, 20) ; print(rH(a)))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 14
+
+Execution stack:
+{}
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 15
+
+Execution stack:
+{ (wH(a, 20) ; print(rH(a))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 15
+
+Execution stack:
+{ (wH(a, 20) ; print(rH(a))) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 15
+
+Execution stack:
+{ wH(a, 20) | print(rH(a)) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 15
+
+Execution stack:
+{ wH(a, 20) | print(rH(a)) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 10 }
+
+Thread Id: 15
+
+Execution stack:
+{ print(rH(a)) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Thread Id: 15
+
+Execution stack:
+{ print(rH(a)) }
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Thread Id: 15
+
+Execution stack:
+{}
+Symbols table:
+{ a -> (1, int) }
+Out list:
+[ 0, 10, 20 ] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }

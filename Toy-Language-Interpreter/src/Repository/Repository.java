@@ -22,27 +22,17 @@ public final class Repository implements IRepository{
         programsList.add(programState);
     }
 
-//    @Override
-//    public ProgramState getCurrentProgramState() {
-//        return programsList.get(programsList.size() - 1);
-//    }
-
     @Override
     public void logProgramStateExecution(ProgramState programState) throws Exception {
         PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
-
-//        for(ProgramState program: this.programsList) {
-//            logFile.append(program.toString());
-//        }
+        // save the content of the given input into a text file
         logFile.append(programState.toString());
-
         logFile.close();
     }
 
     @Override
     public void clearLog() throws Exception {
-        // Want to clear all the data from the log file after the execution
-        // for future executions.
+        // Want to clear all the data from the log file for future execution.
         PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, false)));
         logFile.write("");
         logFile.close();

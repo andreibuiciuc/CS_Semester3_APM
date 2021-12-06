@@ -1,4 +1,6 @@
 
+Thread Id: 1
+
 Execution stack:
 { (int v ; (v = 2 ; print(v))) }
 Symbols table:
@@ -9,6 +11,8 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 1
 
 Execution stack:
 { int v | (v = 2 ; print(v)) }
@@ -21,6 +25,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 1
+
+Execution stack:
+{ int v | (v = 2 ; print(v)) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 1
+
 Execution stack:
 { (v = 2 ; print(v)) }
 Symbols table:
@@ -31,6 +50,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 1
+
+Execution stack:
+{ (v = 2 ; print(v)) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 1
 
 Execution stack:
 { v = 2 | print(v) }
@@ -43,6 +77,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 1
+
+Execution stack:
+{ v = 2 | print(v) }
+Symbols table:
+{ v -> 0 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 1
+
 Execution stack:
 { print(v) }
 Symbols table:
@@ -53,6 +102,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 1
+
+Execution stack:
+{ print(v) }
+Symbols table:
+{ v -> 2 }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 1
 
 Execution stack:
 {}

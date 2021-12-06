@@ -1,4 +1,6 @@
 
+Thread Id: 9
+
 Execution stack:
 { (Ref int v ; (new(v,20) ; (Ref Ref int a ; (new(a,v) ; (new(v,30) ; print(rH(rH(a)))))))) }
 Symbols table:
@@ -9,6 +11,8 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 9
 
 Execution stack:
 { Ref int v | (new(v,20) ; (Ref Ref int a ; (new(a,v) ; (new(v,30) ; print(rH(rH(a))))))) }
@@ -21,6 +25,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 9
+
+Execution stack:
+{ Ref int v | (new(v,20) ; (Ref Ref int a ; (new(a,v) ; (new(v,30) ; print(rH(rH(a))))))) }
+Symbols table:
+{}
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 9
+
 Execution stack:
 { (new(v,20) ; (Ref Ref int a ; (new(a,v) ; (new(v,30) ; print(rH(rH(a))))))) }
 Symbols table:
@@ -31,6 +50,21 @@ File table:
 {}
 Heap: 
 {}
+
+Thread Id: 9
+
+Execution stack:
+{ (new(v,20) ; (Ref Ref int a ; (new(a,v) ; (new(v,30) ; print(rH(rH(a))))))) }
+Symbols table:
+{ v -> (0, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 9
 
 Execution stack:
 { new(v,20) | (Ref Ref int a ; (new(a,v) ; (new(v,30) ; print(rH(rH(a)))))) }
@@ -43,6 +77,21 @@ File table:
 Heap: 
 {}
 
+Thread Id: 9
+
+Execution stack:
+{ new(v,20) | (Ref Ref int a ; (new(a,v) ; (new(v,30) ; print(rH(rH(a)))))) }
+Symbols table:
+{ v -> (0, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{}
+
+Thread Id: 9
+
 Execution stack:
 { (Ref Ref int a ; (new(a,v) ; (new(v,30) ; print(rH(rH(a)))))) }
 Symbols table:
@@ -53,6 +102,21 @@ File table:
 {}
 Heap: 
 { 1 -> 20 }
+
+Thread Id: 9
+
+Execution stack:
+{ (Ref Ref int a ; (new(a,v) ; (new(v,30) ; print(rH(rH(a)))))) }
+Symbols table:
+{ v -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Thread Id: 9
 
 Execution stack:
 { Ref Ref int a | (new(a,v) ; (new(v,30) ; print(rH(rH(a))))) }
@@ -65,6 +129,21 @@ File table:
 Heap: 
 { 1 -> 20 }
 
+Thread Id: 9
+
+Execution stack:
+{ Ref Ref int a | (new(a,v) ; (new(v,30) ; print(rH(rH(a))))) }
+Symbols table:
+{ v -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Thread Id: 9
+
 Execution stack:
 { (new(a,v) ; (new(v,30) ; print(rH(rH(a))))) }
 Symbols table:
@@ -75,6 +154,21 @@ File table:
 {}
 Heap: 
 { 1 -> 20 }
+
+Thread Id: 9
+
+Execution stack:
+{ (new(a,v) ; (new(v,30) ; print(rH(rH(a))))) }
+Symbols table:
+{ a -> (0, Ref int), v -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Thread Id: 9
 
 Execution stack:
 { new(a,v) | (new(v,30) ; print(rH(rH(a)))) }
@@ -87,6 +181,21 @@ File table:
 Heap: 
 { 1 -> 20 }
 
+Thread Id: 9
+
+Execution stack:
+{ new(a,v) | (new(v,30) ; print(rH(rH(a)))) }
+Symbols table:
+{ a -> (0, Ref int), v -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 20 }
+
+Thread Id: 9
+
 Execution stack:
 { (new(v,30) ; print(rH(rH(a)))) }
 Symbols table:
@@ -97,6 +206,21 @@ File table:
 {}
 Heap: 
 { 1 -> 20, 2 -> (1, int) }
+
+Thread Id: 9
+
+Execution stack:
+{ (new(v,30) ; print(rH(rH(a)))) }
+Symbols table:
+{ a -> (2, Ref int), v -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 20, 2 -> (1, int) }
+
+Thread Id: 9
 
 Execution stack:
 { new(v,30) | print(rH(rH(a))) }
@@ -109,6 +233,21 @@ File table:
 Heap: 
 { 1 -> 20, 2 -> (1, int) }
 
+Thread Id: 9
+
+Execution stack:
+{ new(v,30) | print(rH(rH(a))) }
+Symbols table:
+{ a -> (2, Ref int), v -> (1, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 20, 2 -> (1, int) }
+
+Thread Id: 9
+
 Execution stack:
 { print(rH(rH(a))) }
 Symbols table:
@@ -119,6 +258,21 @@ File table:
 {}
 Heap: 
 { 1 -> 20, 2 -> (1, int), 3 -> 30 }
+
+Thread Id: 9
+
+Execution stack:
+{ print(rH(rH(a))) }
+Symbols table:
+{ a -> (2, Ref int), v -> (3, int) }
+Out list:
+[] 
+File table:
+{}
+Heap: 
+{ 1 -> 20, 2 -> (1, int), 3 -> 30 }
+
+Thread Id: 9
 
 Execution stack:
 {}

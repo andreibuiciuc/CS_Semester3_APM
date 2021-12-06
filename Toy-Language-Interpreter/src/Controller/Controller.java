@@ -55,6 +55,7 @@ public final class Controller {
     }
 
     public void oneStepForAllPrograms(List<ProgramState> programsList) throws Exception {
+        // Before execution, log each thread into the file.
         programsList.forEach(programState -> {
             try {
                 repository.logProgramStateExecution(programState);
@@ -63,6 +64,7 @@ public final class Controller {
             }
         });
 
+        // Want to run concurrently one step for each thread
         // Prepare the list of callables
         List<Callable<ProgramState>> callList = programsList.stream()
                 .map( (ProgramState p) -> (Callable<ProgramState>)( () -> {return p.oneStep();}))
@@ -81,8 +83,10 @@ public final class Controller {
                 .filter(programState -> programState != null)
                 .collect(Collectors.toList());
 
+        // Add the newly created threads to the list of programs.
         programsList.addAll(newProgramsList);
 
+        // Log each thread into the file.
         programsList.forEach(programState -> {
             try {
                 repository.logProgramStateExecution(programState);
@@ -91,6 +95,7 @@ public final class Controller {
             }
         });
 
+        // Set the new list of programs.
         repository.setProgramsList(programsList);
     }
 
@@ -100,11 +105,11 @@ public final class Controller {
 
         executor = Executors.newFixedThreadPool(2);
 
+        // Remove the completed programs.
         List<ProgramState> programsList = removeCompletedProgram(repository.getProgramsList());
 
         while(programsList.size() > 0) {
 
-//             System.out.println(programState);
             programsList.get(0).getHeap().setContent((HashMap<Integer, Value>)
                     garbageCollector(getAddressesFromSymbolTable(
                         programsList.get(0).getSymTable().getContent().values(),
@@ -112,6 +117,8 @@ public final class Controller {
             ), programsList.get(0).getHeap().getContent()));
 
             oneStepForAllPrograms(programsList);
+
+            // Remove the completed programs.
             programsList = removeCompletedProgram(repository.getProgramsList());
 
         }

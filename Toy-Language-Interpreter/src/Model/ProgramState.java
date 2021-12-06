@@ -16,7 +16,7 @@ public class ProgramState {
     private MyIDictionary<Integer, Value> heap;
     // IStatement originalProgram;
 
-    private int threadId;
+    private final int threadId;
     private static int threadCounter = 1;
 
     public ProgramState(MyIStack<IStatement> exeStack, MyIDictionary<String, Value> symTable,
@@ -87,6 +87,7 @@ public class ProgramState {
         if(exeStack.isEmpty()) {
             throw new ADTException("Program state stack is empty.");
         }
+        // Get the current statement for execution
         IStatement currentStatement = exeStack.pop();
         return currentStatement.execute(this);
     }
