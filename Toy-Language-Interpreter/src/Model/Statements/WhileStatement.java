@@ -46,6 +46,7 @@ public class WhileStatement implements IStatement{
             throw new InvalidTypeException("Condition in while statement not a boolean");
         }
 
+        statement.typeCheck(typeEnvironment.clone());
         return typeEnvironment;
     }
 

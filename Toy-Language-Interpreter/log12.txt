@@ -1,5 +1,5 @@
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 { (int v ; (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v)))))) }
@@ -12,7 +12,7 @@ File table:
 Heap: 
 {}
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 { int v | (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v))))) }
@@ -25,7 +25,7 @@ File table:
 Heap: 
 {}
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 { int v | (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v))))) }
@@ -38,7 +38,7 @@ File table:
 Heap: 
 {}
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 { (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v))))) }
@@ -51,7 +51,7 @@ File table:
 Heap: 
 {}
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 { (Fork((v = 2 ; print(v))) ; Fork((v = 1 ; (v = v - 1 ; print(v))))) }
@@ -64,7 +64,7 @@ File table:
 Heap: 
 {}
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 { Fork((v = 2 ; print(v))) | Fork((v = 1 ; (v = v - 1 ; print(v)))) }
@@ -77,7 +77,7 @@ File table:
 Heap: 
 {}
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 { Fork((v = 2 ; print(v))) | Fork((v = 1 ; (v = v - 1 ; print(v)))) }
@@ -90,7 +90,7 @@ File table:
 Heap: 
 {}
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 { Fork((v = 1 ; (v = v - 1 ; print(v)))) }
@@ -116,7 +116,7 @@ File table:
 Heap: 
 {}
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 { Fork((v = 1 ; (v = v - 1 ; print(v)))) }
@@ -142,7 +142,7 @@ File table:
 Heap: 
 {}
 
-Thread Id: 12
+Thread Id: 11
 
 Execution stack:
 {}

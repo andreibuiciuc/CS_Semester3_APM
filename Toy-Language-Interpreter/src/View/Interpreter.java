@@ -34,7 +34,7 @@ public class Interpreter {
         MyIDictionary<Integer, Value> heap1 = new MyHeap<>();
 
         IStatement ex1 = new CompoundStatement(new VariableDeclarationStatement("v", new IntType()),
-        new CompoundStatement(new AssignmentStatement("v", new ValueExpression(new IntValue(2))),
+        new CompoundStatement(new AssignmentStatement("v", new ValueExpression(new BoolValue(true))),
         new PrintStatement(new VariableExpression("v"))));
 
         try {
@@ -50,6 +50,7 @@ public class Interpreter {
         } catch (Exception e) {
             System.out.println();
         }
+
 
         // Example 2
         MyIStack<IStatement> exeStack2 = new MyStack<>();
@@ -390,7 +391,7 @@ public class Interpreter {
         }
 
         // Example 13
-        // Ref int a; new(a, 0), fork( wH(a, 10), print(rH(a)), fork(wH(a, 20), print(rH(a))) print(rH(a))
+        // Ref int a; new(a, 0), fork( wH(a, 10), print(rH(a)), fork( print(rH(a))) print(rH(a) )
         MyIStack<IStatement> exeStack13 = new MyStack<>();
         MyIDictionary<String, Value> symTable13 = new MyDictionary<>();
         MyIList<Value> out13 = new MyList<>();
@@ -403,8 +404,7 @@ public class Interpreter {
         new CompoundStatement(new ForkStatement(new CompoundStatement(new HeapWritingStatement("a",
         new ValueExpression(new IntValue(10))),new CompoundStatement(new PrintStatement(
         new HeapReadingExpression(new VariableExpression("a"))), new ForkStatement(
-        new CompoundStatement(new HeapWritingStatement("a", new ValueExpression(new IntValue(20))),
-        new PrintStatement(new HeapReadingExpression(new VariableExpression("a")))))))),
+        new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))))),
         new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))))));
 
         try {
@@ -416,7 +416,7 @@ public class Interpreter {
             Controller controller13 = new Controller(repository13);
             controller13.addProgramState(programState13);
 
-            menu.addCommand(new RunExampleCommand("13", ex12.toString(), controller13));
+            menu.addCommand(new RunExampleCommand("13", ex13.toString(), controller13));
         } catch (Exception e) {
             System.out.println();
         }

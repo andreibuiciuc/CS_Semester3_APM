@@ -25,7 +25,8 @@ public class ForkStatement implements IStatement {
 
     @Override
     public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnvironment) throws Exception {
-        return statement.typeCheck(typeEnvironment);
+        statement.typeCheck(typeEnvironment.clone());
+        return typeEnvironment;
     }
 
     @Override
