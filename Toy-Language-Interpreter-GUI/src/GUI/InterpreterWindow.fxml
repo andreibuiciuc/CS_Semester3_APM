@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.InterpreterWindowController">
+   <children>
+      <TableView fx:id="heapTableView" layoutX="9.0" layoutY="81.0" prefHeight="223.0" prefWidth="136.0">
+        <columns>
+          <TableColumn fx:id="heapAddressColumn" prefWidth="66.40002596378326" text="Address" />
+          <TableColumn fx:id="heapValueColumn" prefWidth="68.79998016357422" text="Value" />
+        </columns>
+      </TableView>
+      <ListView fx:id="outListView" layoutX="145.0" layoutY="81.0" prefHeight="223.0" prefWidth="136.0" />
+      <ListView fx:id="fileListView" layoutX="281.0" layoutY="81.0" prefHeight="223.0" prefWidth="136.0" />
+      <ListView fx:id="programStatesView" layoutX="416.0" layoutY="81.0" onMouseClicked="#setSelectedProgram" prefHeight="223.0" prefWidth="136.0" />
+      <TableView fx:id="symbolTableView" layoutX="551.0" layoutY="81.0" prefHeight="223.0" prefWidth="136.0">
+        <columns>
+          <TableColumn fx:id="variableNameColumn" prefWidth="68.79998779296875" text="Name" />
+          <TableColumn fx:id="variableValueColumn" prefWidth="67.20001220703125" text="Value" />
+        </columns>
+      </TableView>
+      <ListView fx:id="exeStackView" layoutX="687.0" layoutY="81.0" prefHeight="223.0" prefWidth="136.0" />
+      <TextField fx:id="programStatesNumber" alignment="TOP_CENTER" layoutX="8.0" layoutY="31.0" prefHeight="26.0" prefWidth="136.0" promptText="No. Program States" />
+      <Button fx:id="oneStepExecutionButton" layoutX="687.0" layoutY="32.0" mnemonicParsing="false" onAction="#runOneStepButtonAction" prefHeight="26.0" prefWidth="136.0" text="One Step Execution" />
+      <Label layoutX="46.0" layoutY="304.0" text="Heap Table" />
+      <Label layoutX="183.0" layoutY="304.0" text="Output List" />
+      <Label layoutX="315.0" layoutY="304.0" text="FileTable List" />
+      <Label layoutX="433.0" layoutY="304.0" text="Program States List" />
+      <Label layoutX="583.0" layoutY="304.0" text="Symbol Table" />
+      <Label layoutX="713.0" layoutY="304.0" text="Execution Stack" />
+   </children>
+</AnchorPane>
